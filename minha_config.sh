@@ -26,7 +26,7 @@ eval "$(starship init zsh)"
 mkdir -p ~/.config
 touch ~/.config/starship.toml
 
-#O tema -> https://starship.rs/presets/nerd-font
+#O tema(Necessário baixar as fonts) -> https://starship.rs/presets/nerd-font
 
 # Instalar Zsh Autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions
