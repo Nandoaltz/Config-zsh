@@ -12,21 +12,24 @@ zsh
 
 # Instalar Oh-my-zsh! -> https://ohmyz.sh/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#!/bin/bash
+
+# Abaixo tudo é opcional
+
+# Instalar e configurar ZSH
+sudo apt install zsh -y
+chsh -s /bin/zsh
+zsh
+
+# Instalar Oh-my-zsh! -> https://ohmyz.sh/
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Instalar Spaceship Prompt
 # https://github.com/spaceship-prompt/spaceship-prompt
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
-#STARSHIP
-curl -sS https://starship.rs/install.sh | sh
-
-#adicionar no ~/.zshrc e comentar o ZSH_THEME
-eval "$(starship init zsh)"
-
-#Diretorio para adicionar o tema
-mkdir -p ~/.config
-touch ~/.config/starship.toml
-
-#O tema(Necessário baixar as fonts) -> https://starship.rs/presets/nerd-font
+# Mudar ~/.zshrc -> ZSH_THEME="spaceship"
 
 # Instalar Zsh Autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions
@@ -38,3 +41,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Mudar plugins
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+# Font optional (https://github.com/pdf/ubuntu-mono-powerline-ttf)
+mkdir -p ~/.fonts
+git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git ~/.fonts/ubuntu-mono-powerline-ttf
+fc-cache -vf
+
+# REBOOT!!!!!!!!!!!!!!!!!!!!!
