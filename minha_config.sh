@@ -48,3 +48,24 @@ git clone https://github.com/pdf/ubuntu-mono-powerline-ttf.git ~/.fonts/ubuntu-m
 fc-cache -vf
 
 # REBOOT!!!!!!!!!!!!!!!!!!!!!
+
+  GNU nano 8.4                                          /home/nando/.config/starship.toml                                                   
+format = '''
+
+[  ](bold yellow) $directory$rust$package
+[ 🦖](bold green) '''
+
+scan_timeout = 10
+add_newline = false
+palette = 'foo'
+
+[palettes.foo]
+blue = '21'
+mustard = '#af8700'
+
+[directory]
+style = "yellow"
+home_symbol = " "
+read_only = "🔒"
+truncation_symbol = " …/"
+
